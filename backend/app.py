@@ -82,8 +82,7 @@ db = DatabaseManager(
     host='securenet-securenet1.c.aivencloud.com',
     user='avnadmin',
     password='AVNS_DzruYfuj_BgF2aD1K9c',  # Change this!
-    database='defaultdb',
-    port='10675'
+    database='defaultdb'
 )
 app.config['DB'] = db
 app.register_blueprint(admin_bp)
