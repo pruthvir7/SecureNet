@@ -10,12 +10,13 @@ import json
 class DatabaseManager:
     """MySQL database manager using PyMySQL."""
     
-    def __init__(self, host='localhost', user='root', password='your_password', database='securenet'):
+    def __init__(self, host='localhost', user='root', password='your_password', database='defaultdb', port=10675):
         self.config = {
             'host': host,
             'user': user,
             'password': password,
             'database': database,
+            'port':port,
             'charset': 'utf8mb4',
             'cursorclass': pymysql.cursors.DictCursor,
             'autocommit': False
