@@ -42,6 +42,8 @@ app = Flask(__name__,
             static_url_path='')
 socketio = SocketIO(app, cors_allowed_origins="*")
 
+PORT = int(os.environ.get("PORT", 10000))
+
 CORS(app, resources={
     r"/api/*": {
         "origins": "*",
@@ -1115,4 +1117,4 @@ if __name__ == '__main__':
     print("\nServer starting on http://localhost:5001")
     print("="*80 + "\n")
     
-    socketio.run(app, host='0.0.0.0', port=5001, debug=True)
+    socketio.run(app, host='0.0.0.0', port=PORT, debug=True)
