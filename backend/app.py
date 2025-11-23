@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from auth_engine import AuthenticationEngine, UserBehavioralProfile
+from backend.auth_engine import AuthenticationEngine, UserBehavioralProfile
 import os
 import sys
 from datetime import datetime, timedelta, timezone
@@ -27,14 +27,12 @@ import base64
 import json
 from flask_mail import Mail, Message
 import random
-from admin_routes import admin_bp
+from backend.admin_routes import admin_bp
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from auth_engine import AuthenticationEngine
-from edns_integration import EDNSSecurityLayer
-from models import DatabaseManager
+from backend.edns_integration import EDNSSecurityLayer
+from backend.models import DatabaseManager
 
 # Initialize Flask app
 app = Flask(__name__, 
